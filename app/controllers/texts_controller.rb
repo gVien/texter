@@ -6,7 +6,7 @@ class TextsController < ApplicationController
   def create
     @text = Text.new(params[:text])
     if @text.valid?
-      TextBelt.text(params[:text][:phone_number], params[:text][:message])
+      HTTParty.post("http://textbelt.com/text", { body: { number: params[:text][:phone_number], message: params[:text][:message]} })
       flash[:success] = "Text has successfully sent to #{params[:text][:phone_number]}"
       redirect_to root_path
     else

@@ -30,6 +30,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # http://textbelt.com/
 gem 'textbelt'
 
+# http party to post to textbelt
+# apparently the above gem is buggy with certain numbers
+# as it thinks some numbers are not US based (e.g. /w area code 408)
+gem "httparty"
+
 # help with creating models w/o database but still has
 # validation similar to activeRecord
 gem 'active_attr'
