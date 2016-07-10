@@ -1,10 +1,13 @@
-<%= form_for @text do |f| %>
-  <%= f.label :phone_number, class: "sr-only" %>
-  <%= f.telephone_field :phone_number, placeholder: "Enter 10-digit phone number, e.g. 1234567890", class: "form-control", :required => true, pattern: "[0-9]{10}"  %>
 
- <div class="field">
-    <%= f.text_area :message, placeholder: "What would you like to send?", :required => true%>
+<div class="row" id="text-field">
+  <div class="col-sm-12">
+    <h3 class="features">Features</h3>
+    <ul class="feature-list">
+      <li>Send a text to a friend who has a 10-digit US phone number.</li>
+      <li>No charge for using this service (phone provider may charge a fee for receiving the text, which this service is not responsible!)</li>
+      <li>Simple as 2-step. Now try it!</li>
+    </ul>
+
+    <%= render "text_form" %>
   </div>
-
-  <%= f.submit "Send", class: "btn btn-primary", data: { disable_with: "Sending..." } %>
-<% end %>
+</div>
