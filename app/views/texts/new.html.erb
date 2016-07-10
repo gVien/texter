@@ -1,0 +1,10 @@
+<%= form_for @text do |f| %>
+  <%= f.label :phone_number, class: "sr-only" %>
+  <%= f.telephone_field :phone_number, placeholder: "Enter 10-digit phone number, e.g. 1234567890", class: "form-control", :required => true, pattern: "[0-9]{10}"  %>
+
+ <div class="field">
+    <%= f.text_area :message, placeholder: "What would you like to send?", :required => true%>
+  </div>
+
+  <%= f.submit "Send", class: "btn btn-primary", data: { disable_with: "Sending..." } %>
+<% end %>
