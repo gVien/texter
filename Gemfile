@@ -27,6 +27,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # http://textbelt.com/
 gem 'textbelt'
 
+# help with creating models w/o database but still has
+# validation similar to activeRecord
+gem 'active_attr'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
