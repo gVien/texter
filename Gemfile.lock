@@ -61,9 +61,14 @@ GEM
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-harrow (0.5.2)
+    capistrano-passenger (0.2.0)
+      capistrano (~> 3.0)
     capistrano-rails (1.1.7)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rbenv (2.0.4)
+      capistrano (~> 3.1)
+      sshkit (~> 1.3)
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
@@ -189,7 +194,10 @@ DEPENDENCIES
   active_attr
   bootstrap-sass (~> 3.3.5)
   byebug
-  capistrano-rails
+  capistrano (~> 3.5)
+  capistrano-passenger (~> 0.2.0)
+  capistrano-rails (~> 1.1.6)
+  capistrano-rbenv (~> 2.0)
   capistrano3-puma
   coffee-rails (~> 4.1.0)
   httparty

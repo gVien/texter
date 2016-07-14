@@ -1,3 +1,3 @@
-server "54.183.171.7",
-       :user => "deployer",
+server "54.153.61.193",
+       :user => "deploy",
        :roles => %w(web app db)
