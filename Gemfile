@@ -56,6 +56,8 @@ group :development, :test do
 end
 
 gem "capistrano3-puma"
+gem "passenger"
+# gem "puma", "3.4.0"
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
