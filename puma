@@ -1,0 +1,45 @@
+#
+# chkconfig: 2345 20 80
+# description: Puma is the http server for this Texter app
+# processname: puma
+
+PIDFILE=/var/run/puma/puma.pid
+DEFAULT_PORT=9292
+APP_LOCALE=/var/www/texter
+
+start() {
+  echo "Starting puma web server with /etc/init.d/puma start..."
+  echo "Don't forget to do 'RAILS_ENV=production bundle exec rake assets:precompile'"
+  # http://stackoverflow.com/questions/18700219/rails-4-assets-not-loading-in-production
+  echo "And update config/environments/production.rb to add 'config.assets.compile = true'"
+  cd $APP_LOCALE
+  bundle exec pumactl -F puma.rb start
+}
+
+stop() {
+  echo "stopping puma web server with /etc/init.d/puma stop..."
+  cd $APP_LOCALE
+  bundle exec pumactl -F puma.rb stop
+}
+
+restart() {
+  stop
+  start
+}
+
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  restart)
+    restart
+    ;;
+  *)
+    echo $"Usage: $0 {start|stop|restart}"
+    exit 3
+esac
+
+exit $?
